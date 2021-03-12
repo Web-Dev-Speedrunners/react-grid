@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import "./App.css";
+import GridController from "./components/grid_controller";
+import MUIThemeOptions from "./config/theme/umi_theme_options";
+
+const theme = createMuiTheme(MUIThemeOptions);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GridController />
+    </ThemeProvider>
   );
 }
 
