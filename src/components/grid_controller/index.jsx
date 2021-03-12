@@ -4,9 +4,9 @@ import Grid from "../grid";
 import GridActionBar from "../grid_action_bar";
 import generateGridNode from "../../util/generate_grid_nodes";
 import InitialGridConfig from "../../config/theme/initial_grid";
-import useActionAddRow from "../hooks/useActionAddRow";
-import useActionSelectNode from "../hooks/useActionSelectNode";
-import useActionResetGrid from "../hooks/useActionResetGrid";
+import useActionAddRow from "../../hooks/useActionAddRow";
+import useActionSelectNode from "../../hooks/useActionSelectNode";
+import useActionResetGrid from "../../hooks/useActionResetGrid";
 
 const useStyles = makeStyles({
   gridWrapper: {
