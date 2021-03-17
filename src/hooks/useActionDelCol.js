@@ -1,14 +1,16 @@
 const useActionDelCol = (gridNodes, setGridNodes) => {
   const handleSelect = () => { 
-    for (let i = gridNodes.length - 1; i >= 0; i--) {
-      gridNodes[i].pop();
+    let newGridNodes = Array.from(gridNodes);
+
+    for (let i = newGridNodes.length - 1; i >= 0; i--) {
+      newGridNodes[i].pop();
       
-      if (!gridNodes[i].length) {
-        gridNodes.pop(i)
+      if (!newGridNodes[i].length) {
+        newGridNodes.pop(i);
       }
     }
 
-    setGridNodes([...gridNodes]);
+    setGridNodes(newGridNodes);
   };
 
   return {
