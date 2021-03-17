@@ -9,6 +9,7 @@ const ActionButton = ({ ...buttonProps }) => (
 
 const GridActionBar = ({
   onSelectAddRow,
+  onSelectRemoveRow,
   onSelectReset,
   highlightColor,
   onChangeHighlightColor,
@@ -19,6 +20,7 @@ const GridActionBar = ({
         {/* Actions */}
         <ActionButton onClick={onSelectReset}>Reset</ActionButton>
         <ActionButton onClick={onSelectAddRow}>Add Row</ActionButton>
+        <ActionButton onClick={onSelectRemoveRow}>Remove Row</ActionButton>
         <ColorPicker
           color={highlightColor}
           onSetColor={onChangeHighlightColor}
@@ -30,6 +32,7 @@ const GridActionBar = ({
 
 GridActionBar.propTypes = {
   onSelectAddRow: PropType.func,
+  onSelectRemoveRow: PropType.func,
   onSelectReset: PropType.func,
   highlightColor: PropType.string,
   onChangeHighlightColor: PropType.func,

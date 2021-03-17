@@ -5,6 +5,7 @@ import GridActionBar from "../grid_action_bar";
 import generateGridNode from "../../util/generate_grid_nodes";
 import InitialGridConfig from "../../config/theme/initial_grid";
 import useActionAddRow from "../../hooks/useActionAddRow";
+import useActionRemoveRow from "../../hooks/useActionRemoveRow";
 import useActionSelectNode from "../../hooks/useActionSelectNode";
 import useActionResetGrid from "../../hooks/useActionResetGrid";
 
@@ -28,6 +29,7 @@ function GridController() {
   );
   // ========== Hook Extensions ==========
   const {handleSelect : handleAddRow} = useActionAddRow(gridNodes, setGridNodes)
+  const {handleSelect : handleRemoveRow} = useActionRemoveRow(gridNodes, setGridNodes)
   const {handleSelect : handleSelectNode} = useActionSelectNode(gridNodes, setGridNodes)
   const {handleSelect : handleResetGrid} = useActionResetGrid(gridNodes, setGridNodes)
   // TODO: Add your hooks here
@@ -38,6 +40,7 @@ function GridController() {
     <div>
       <GridActionBar 
         onSelectAddRow={handleAddRow}
+        onSelectRemoveRow={handleRemoveRow}
         onSelectReset={handleResetGrid}
         highlightColor={highlightColor}
         onChangeHighlightColor={setHighlightColor}
