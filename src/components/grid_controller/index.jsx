@@ -5,7 +5,7 @@ import GridActionBar from "../grid_action_bar";
 import generateGridNode from "../../util/generate_grid_nodes";
 import InitialGridConfig from "../../config/theme/initial_grid";
 import useActionAddRow from "../../hooks/useActionAddRow";
-import useActionRemoveRow from "../../hooks/useActionRemoveRow";
+import useActionRemoveRow from "../../hooks/useActionRemoveRow.js";
 import useActionSelectNode from "../../hooks/useActionSelectNode";
 import useActionResetGrid from "../../hooks/useActionResetGrid";
 
