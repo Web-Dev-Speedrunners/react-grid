@@ -1,4 +1,3 @@
-import InitialGridConfig from "../config/theme/initial_grid";
 import { GridCell } from "../util/generate_grid_nodes";
 
 const useActionAddCol = (gridNodes, setGridNodes) => {
