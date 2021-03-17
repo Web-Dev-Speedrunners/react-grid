@@ -2,7 +2,6 @@ import React from "react";
 import { AppBar, Button, Toolbar } from "@material-ui/core";
 import PropType from "prop-types";
 import ColorPicker from "../color_picker";
-import { act } from "react-dom/test-utils";
 
 const ActionButton = ({ ...buttonProps }) => (
   <Button color="secondary" {...buttonProps} />
