@@ -6,9 +6,8 @@ const useActionAddCol = (gridNodes, setGridNodes) => {
     if (!gridNodes.length) {
         gridNodes.push([]);
     }
-    
     for (let i = 0; i < gridNodes.length; i++) {
-        gridNodes[i].push(new GridCell());
+      gridNodes[i].push(new GridCell());
     }
 
     setGridNodes([...gridNodes]);
