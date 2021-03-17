@@ -4,7 +4,7 @@ import { GridCell } from "../util/generate_grid_nodes";
 const useActionAddCol = (gridNodes, setGridNodes) => {
   const handleSelect = () => {
     let rowCount = InitialGridConfig.ROW_COUNT;
-    let newGridNodes = Array.from(gridNodes);
+    let newGridNodes = [...gridNodes];
 
     if (!newGridNodes.length) {
       for (let i = 0; i < rowCount; i++) {
