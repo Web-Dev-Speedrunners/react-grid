@@ -3,6 +3,7 @@ const useActionDelCol = (gridNodes, setGridNodes) => {
     let newGridNodes = Array.from(gridNodes);
 
     for (let i = newGridNodes.length - 1; i >= 0; i--) {
+      newGridNodes[i] = [...newGridNodes[i]];
       newGridNodes[i].pop();
       
       if (!newGridNodes[i].length) {
