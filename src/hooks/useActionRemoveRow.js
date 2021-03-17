@@ -1,5 +1,5 @@
-import InitialGridConfig from "../config/theme/initial_grid";
-import { GridCell } from "../util/generate_grid_nodes";
+// import InitialGridConfig from "../config/theme/initial_grid";
+// import { GridCell } from "../util/generate_grid_nodes";
 
 const useActionRemoveRow = (gridNodes, setGridNodes) => {
   const handleSelect = () => {
