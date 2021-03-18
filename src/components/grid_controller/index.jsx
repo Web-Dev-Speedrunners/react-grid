@@ -8,6 +8,8 @@ import useActionAddRow from "../../hooks/useActionAddRow";
 import useActionRemoveRow from "../../hooks/useActionRemoveRow.js";
 import useActionSelectNode from "../../hooks/useActionSelectNode";
 import useActionResetGrid from "../../hooks/useActionResetGrid";
+import useActionAddCol from "../../hooks/useActionAddCol"
+import useActionDelCol from "../../hooks/useActionDelCol"
 
 const useStyles = makeStyles({
   gridWrapper: {
@@ -32,6 +34,8 @@ function GridController() {
   const {handleSelect : handleRemoveRow} = useActionRemoveRow(gridNodes, setGridNodes)
   const {handleSelect : handleSelectNode} = useActionSelectNode(gridNodes, setGridNodes)
   const {handleSelect : handleResetGrid} = useActionResetGrid(gridNodes, setGridNodes)
+  const {handleSelect : handleAddCol} = useActionAddCol(gridNodes, setGridNodes)
+  const {handleSelect : handleDelCol} = useActionDelCol(gridNodes, setGridNodes)
   // TODO: Add your hooks here
 
   const classes = useStyles();
@@ -41,6 +45,8 @@ function GridController() {
       <GridActionBar 
         onSelectAddRow={handleAddRow}
         onSelectRemoveRow={handleRemoveRow}
+        onSelectAddCol={handleAddCol}
+        onSelectDelCol={handleDelCol}
         onSelectReset={handleResetGrid}
         highlightColor={highlightColor}
         onChangeHighlightColor={setHighlightColor}
