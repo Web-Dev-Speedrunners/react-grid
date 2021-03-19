@@ -9,6 +9,7 @@ import useActionSelectNode from "../../hooks/useActionSelectNode";
 import useActionResetGrid from "../../hooks/useActionResetGrid";
 import useActionAddCol from "../../hooks/useActionAddCol"
 import useActionDelCol from "../../hooks/useActionDelCol"
+import useLongPress from "../../hooks/useLongPress"
 
 const useStyles = makeStyles({
   gridWrapper: {
@@ -34,12 +35,15 @@ function GridController() {
   const {handleSelect : handleResetGrid} = useActionResetGrid(gridNodes, setGridNodes)
   const {handleSelect : handleAddCol} = useActionAddCol(gridNodes, setGridNodes)
   const {handleSelect : handleDelCol} = useActionDelCol(gridNodes, setGridNodes)
+  const {isLongPress, handleMouseDown, handleMouseUp} = useLongPress()
   // TODO: Add your hooks here
 
   const classes = useStyles();
-
+  
   return (
-    <div>
+    <div 
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}>
       <GridActionBar 
         onSelectAddRow={handleAddRow}
         onSelectAddCol={handleAddCol}
@@ -52,6 +56,7 @@ function GridController() {
         <Grid
           gridNodes={gridNodes}
           highlightColor={highlightColor}
+          isLongPress={isLongPress}
           onSelectNode={handleSelectNode}
         />
       </div>
