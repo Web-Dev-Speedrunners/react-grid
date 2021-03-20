@@ -10,9 +10,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Grid = ({ gridNodes, onSelectNode, highlightColor }) => {
-  // TODO: Optional, we can handle onSelectNode to be called on long press. 
-  // First We need to build long press (preferably with hooks)
+const Grid = ({ gridNodes, onSelectNode, highlightColor, isLongPress }) => {
   const classes = useStyles();
 
   const renderCell = (cellProp, row, col) => {
@@ -23,6 +21,10 @@ const Grid = ({ gridNodes, onSelectNode, highlightColor }) => {
       <td
         key={`${row}-${col}`}
         onClick={() => onSelectNode(row, col)}
+        onMouseEnter={() => {
+          if(isLongPress) 
+            onSelectNode(row, col)
+        }}
         className={classes.cell}
         style={tdStyle}
       />
@@ -51,6 +53,7 @@ Grid.propTypes = {
   ]
    */
   onSelectNode: proptypes.func, // (row, col) => void,
+  isLongPress: proptypes.bool, 
   highlightColor: proptypes.string, // Hex Color: #FFFFFF
 };
 
