@@ -36,6 +36,8 @@ const GridActionBar = ({
 
 GridActionBar.propTypes = {
   onSelectAddRow: PropType.func,
+  onSelectAddCol: PropType.func,
+  onSelectDelCol: PropType.func,
   onSelectRemoveRow: PropType.func,
   onSelectReset: PropType.func,
   highlightColor: PropType.string,
