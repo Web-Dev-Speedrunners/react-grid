@@ -15,4 +15,15 @@ const generateGridNode = (rowCount, colCount) => {
   return gridNodes;
 };
 
+export const generateFilledGrid = (rowCount, colCount) => {
+  const gridNodes = [];
+  for (let row = 0; row < rowCount; row++) {
+    gridNodes.push([]);
+    for (let col = 0; col < colCount; col++) {
+      gridNodes[gridNodes.length - 1].push(new GridCell(true));
+    }
+  }
+  return gridNodes;
+};
+
 export default generateGridNode;
