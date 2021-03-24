@@ -15,6 +15,9 @@ const generateGridNode = (rowCount, colCount) => {
   return gridNodes;
 };
 
+/**
+ * Create new gridCell as above but now highlighted by default
+ */
 export const generateFilledGrid = (rowCount, colCount) => {
   const gridNodes = [];
   for (let row = 0; row < rowCount; row++) {
