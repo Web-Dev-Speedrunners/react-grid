@@ -16,6 +16,7 @@ const GridActionBar = ({
   highlightColor,
   onChangeHighlightColor,
   onFillAllCells,
+  onFillEmptyCells,
 }) => {
   return (
     <AppBar position="static">
@@ -26,7 +27,8 @@ const GridActionBar = ({
         <ActionButton onClick={onSelectRemoveRow}>Remove Row</ActionButton>
         <ActionButton onClick={onSelectAddCol}>Add Column</ActionButton>
         <ActionButton onClick={onSelectDelCol}>Delete Column</ActionButton>
-        <ActionButton onClick={onFillAllCells}>Fill All Cells</ActionButton>
+        <ActionButton onClick={onFillAllCells}>Fill All</ActionButton>
+        <ActionButton onClick={onFillEmptyCells}>Fill Empty</ActionButton>
         <ColorPicker
           color={highlightColor}
           onSetColor={onChangeHighlightColor}

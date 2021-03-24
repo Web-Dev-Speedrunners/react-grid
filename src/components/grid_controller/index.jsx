@@ -12,6 +12,8 @@ import useActionAddCol from "../../hooks/useActionAddCol"
 import useActionDelCol from "../../hooks/useActionDelCol"
 import useLongPress from "../../hooks/useLongPress"
 import useActionFillAllCells from "../../hooks/useActionFillAllCells"
+import useActionFillEmptyCells from "../../hooks/useActionFillEmpty";
+
 const useStyles = makeStyles({
   gridWrapper: {
     marginTop: "20px",
@@ -38,6 +40,7 @@ function GridController() {
   const {handleSelect : handleAddCol} = useActionAddCol(gridNodes, setGridNodes)
   const {handleSelect : handleDelCol} = useActionDelCol(gridNodes, setGridNodes)
   const {handleSelect : handleFillAllCells } = useActionFillAllCells(gridNodes, setGridNodes)
+  const {handleSelect : handleFillEmptyCells } = useActionFillEmptyCells(gridNodes, setGridNodes)
   const {isLongPress, handleMouseDown, handleMouseUp} = useLongPress()
   // TODO: Add your hooks here
 
@@ -56,6 +59,7 @@ function GridController() {
         highlightColor={highlightColor}
         onChangeHighlightColor={setHighlightColor}
         onFillAllCells={handleFillAllCells}
+        onFillEmptyCells={handleFillEmptyCells}
       />
       <div className={classes.gridWrapper}>
         <Grid
