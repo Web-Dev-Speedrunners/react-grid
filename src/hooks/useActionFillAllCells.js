@@ -1,4 +1,3 @@
-import InitialGridConfig from "../config/theme/initial_grid";
 import { generateFilledGrid } from "../util/generate_grid_nodes";
 
 /**
@@ -7,7 +6,7 @@ import { generateFilledGrid } from "../util/generate_grid_nodes";
  */
 const useActionFillAllCells = (gridNodes, setGridNodes) => {
   const handleFillAllCells = () => {
-    if (gridNodes.length == 0 || gridNodes[0].length == 0) {
+    if (gridNodes.length === 0 || gridNodes[0].length === 0) {
       return gridNodes;
     }
 
