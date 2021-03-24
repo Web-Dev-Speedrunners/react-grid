@@ -7,14 +7,11 @@ import { generateFilledGrid } from "../util/generate_grid_nodes";
  */
 const useActionFillAllCells = (gridNodes, setGridNodes) => {
   const handleFillAllCells = () => {
-    console.log(gridNodes);
+    if (gridNodes.length == 0 || gridNodes[0].length == 0) {
+      return gridNodes;
+    }
 
-    setGridNodes(
-      generateFilledGrid(
-        InitialGridConfig.COLUMN_COUNT,
-        InitialGridConfig.ROW_COUNT
-      )
-    );
+    setGridNodes(generateFilledGrid(gridNodes.length, gridNodes[0].length));
   };
 
   return {
