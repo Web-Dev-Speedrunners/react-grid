@@ -5,12 +5,14 @@ import { generateFilledGrid } from "../util/generate_grid_nodes";
  * highlighted
  */
 const useActionFillAllCells = (gridNodes, setGridNodes) => {
-  const handleFillAllCells = () => {
+  const handleFillAllCells = (highlightColor) => {
     if (gridNodes.length === 0 || gridNodes[0].length === 0) {
       return gridNodes;
     }
 
-    setGridNodes(generateFilledGrid(gridNodes.length, gridNodes[0].length));
+    setGridNodes(
+      generateFilledGrid(gridNodes.length, gridNodes[0].length, highlightColor)
+    );
   };
 
   return {
