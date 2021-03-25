@@ -24,11 +24,11 @@ const GridActionBar = ({
         {/* Actions */}
         <ActionButton onClick={onSelectReset}>Reset</ActionButton>
         <ActionButton onClick={onSelectAddRow}>Add Row</ActionButton>
-        <ActionButton onClick={onSelectRemoveRow}>Remove Row</ActionButton>
         <ActionButton onClick={onSelectAddCol}>Add Column</ActionButton>
-        <ActionButton onClick={onSelectDelCol}>Delete Column</ActionButton>
         <ActionButton onClick={onFillAllCells}>Fill All</ActionButton>
         <ActionButton onClick={onFillEmptyCells}>Fill Empty</ActionButton>
+        <ActionButton onClick={onSelectRemoveRow}>Remove Row</ActionButton>
+        <ActionButton onClick={onSelectDelCol}>Remove Column</ActionButton>
         <ColorPicker
           color={highlightColor}
           onSetColor={onChangeHighlightColor}

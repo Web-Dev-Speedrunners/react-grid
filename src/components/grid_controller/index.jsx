@@ -66,7 +66,7 @@ function GridController() {
           gridNodes={gridNodes}
           highlightColor={highlightColor}
           isLongPress={isLongPress}
-          onSelectNode={handleSelectNode}
+          onSelectNode={(row, col) => handleSelectNode(row, col, highlightColor)}
         />
       </div>
     </div>
