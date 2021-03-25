@@ -1,6 +1,8 @@
+import InitialGridConfig from "../config/theme/initial_grid";
+
 export class GridCell {
-  constructor(highlight = false) {
-    this.highlight = highlight;
+  constructor(cellColor = InitialGridConfig.UNSELECTED_CELL_COLOR) {
+    this.cellColorCode = cellColor
   }
 }
 
