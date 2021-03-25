@@ -21,7 +21,6 @@ const generateGridNode = (rowCount, colCount) => {
  * Create new gridCell as above but now highlighted by default
  */
 export const generateFilledGrid = (rowCount, colCount, highlightColor) => {
-  console.log(highlightColor);
   const gridNodes = [];
   for (let row = 0; row < rowCount; row++) {
     gridNodes.push([]);

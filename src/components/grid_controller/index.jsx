@@ -59,7 +59,7 @@ function GridController() {
         highlightColor={highlightColor}
         onChangeHighlightColor={setHighlightColor}
         onFillAllCells={() => handleFillAllCells(highlightColor)}
-        onFillEmptyCells={handleFillEmptyCells}
+        onFillEmptyCells={() => handleFillEmptyCells(highlightColor)}
       />
       <div className={classes.gridWrapper}>
         <Grid

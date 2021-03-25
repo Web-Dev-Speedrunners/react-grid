@@ -1,9 +1,12 @@
+import InitialGridConfig from "../config/theme/initial_grid";
+import { GridCell } from "../util/generate_grid_nodes";
+
 /**
- * Iterate and set unhighlighted cells to
+ * Iterate and set color of uncolored cells to active color
  *
  */
 const useActionFillEmptyCells = (gridNodes, setGridNodes) => {
-  const handleFillEmptyCells = () => {
+  const handleFillEmptyCells = (highlightColor) => {
     if (gridNodes.length === 0 || gridNodes[0].length === 0) {
       return gridNodes;
     }
@@ -11,7 +14,12 @@ const useActionFillEmptyCells = (gridNodes, setGridNodes) => {
     for (let i = 0; i < gridNodes.length; i++) {
       let row = gridNodes[i].slice();
       for (let j = 0; j < row.length; j++) {
-        row.forEach((cell) => (cell.highlight = true));
+        if (row[j].cellColorCode == InitialGridConfig.UNSELECTED_CELL_COLOR) {
+          // cell is empty
+          console.log(row[j], "is empty");
+          row[j] = new GridCell(highlightColor);
+          console.log(row[j], "is colored");
+        }
       }
 
       newGrid[i] = row;
