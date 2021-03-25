@@ -10,13 +10,11 @@ const useStyles = makeStyles({
   },
 });
 
-const Grid = ({ gridNodes, onSelectNode, highlightColor, isLongPress }) => {
+const Grid = ({ gridNodes, onSelectNode, isLongPress }) => {
   const classes = useStyles();
 
   const renderCell = (cellProp, row, col) => {
-    const tdStyle = cellProp.highlight
-      ? { backgroundColor: highlightColor }
-      : {};
+    const tdStyle = { backgroundColor: cellProp.cellColorCode }
     return (
       <td
         key={`${row}-${col}`}
@@ -54,7 +52,6 @@ Grid.propTypes = {
    */
   onSelectNode: proptypes.func, // (row, col) => void,
   isLongPress: proptypes.bool, 
-  highlightColor: proptypes.string, // Hex Color: #FFFFFF
 };
 
 export default Grid;
