@@ -14,11 +14,9 @@ const useActionFillEmptyCells = (gridNodes, setGridNodes) => {
     for (let i = 0; i < gridNodes.length; i++) {
       let row = gridNodes[i].slice();
       for (let j = 0; j < row.length; j++) {
-        if (row[j].cellColorCode == InitialGridConfig.UNSELECTED_CELL_COLOR) {
+        if (row[j].cellColorCode === InitialGridConfig.UNSELECTED_CELL_COLOR) {
           // cell is empty
-          console.log(row[j], "is empty");
           row[j] = new GridCell(highlightColor);
-          console.log(row[j], "is colored");
         }
       }
 
